@@ -8,7 +8,14 @@
 </head>
 <body>
     <div>
-        <h1> Bienvenido        </h1>
-    </div>
+      <h1>Bienvenidos</h1>
+    <hr />
+    <a href="http://localhost:4746/Video/DeleteVideo">Eliminar Video</a>
+    <h1></h1>
+    <a href="http://localhost:4746/Video/AddVideo">Agregar Video</a>
+    <h1></h1>
+    <a href="http://localhost:4746/Video/UpdateVideo">Actualizar Video</a>
+    <h1></h1>
+    <a href="http://localhost:4746/Video/DeleteReproduccionesVideo">Eliminar Video por reproducciones</a>
 </body>
 </html>
