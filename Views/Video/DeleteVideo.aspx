@@ -7,8 +7,15 @@
     <title>DeleteVideo</title>
 </head>
 <body>
-    <div>
-    <h1>Vista para eliminar video</h1>
-    </div>
+     <form action = "Video/DeleteVideo" method=post>
+    <fieldset>
+    <legend>Ingresa el IdVideo que se va a eliminar</legend>
+    <label for="idVideo">IdVideo</label>
+    <input type="text" name="IdVideo" />
+    <h1></h1>
+    <input type="submit" value= "Eliminar Video"/>
+    </fieldset>
+    </form>
+     
 </body>
 </html>

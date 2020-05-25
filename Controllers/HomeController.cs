@@ -15,7 +15,7 @@ namespace MvcPlantilla.Controllers
         {
             return View();
         }
-        public ActionResult VerVideo()
+        public ActionResult Opciones()
         {
             return View();
         }

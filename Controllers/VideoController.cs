@@ -14,30 +14,62 @@ namespace MvcPlantilla.Controllers
         //
         // GET: /Video/
 
-        public ActionResult Index()
-        {
-            return View();
-        }
+       public ActionResult VerVideo()
+       {
+           ViewData["Video"] = BaseHelper.ejecutarConsulta("SELECT * FROM video", CommandType.Text);
+           return View();
+       }
 
-        public ActionResult DeleteVideo()
+         public ActionResult DeleteVideo()
+       {
+           
+          return View();
+       }
+        [HttpPost]
+        public ActionResult Delete(int IdVideo)
         {
-            return View();
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdVideo", IdVideo));
+
+            BaseHelper.ejecutarSentencia("DELETE FROM video "+ "WHERE idVideo = @idVideo", CommandType.Text, parametros);
+            
+            return RedirectToAction("Index", "Home");
         }
 
         public ActionResult AddVideo()
         {
-            return View();
+          return View();
         }
-
-        public ActionResult UpdateVideo()
+         [HttpPost]
+        public ActionResult AddVideo(int IdVideo,string Titulo, int Repro, string Url)
         {
-            return View();
-        }
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdVideo", IdVideo));
+            parametros.Add(new SqlParameter("@Titulo", Titulo));
+            parametros.Add(new SqlParameter("@Repro", Repro));
+            parametros.Add(new SqlParameter("@Url", Url));
+            BaseHelper.ejecutarSentencia("INSERT INTO Video " + "VALUES(@idVideo,@titulo," + "@repro ,@url)", CommandType.Text,parametros);
 
-        public ActionResult DeleteReproduccionesVideo()
-        {
-            return View();
+
+            return RedirectToAction("Index", "Home");
         }
        
+        public ActionResult UpdateVideo()
+    {
+        
+        return View();
+    }
+     [HttpPost]
+        public ActionResult UpdateVideo(int IdVideo, string Titulo, int Repro, string Url)
+        {
+            List<SqlParameter> parametros = new List<SqlParameter>();
+            parametros.Add(new SqlParameter("@IdVideo", IdVideo));
+            parametros.Add(new SqlParameter("@Titulo", Titulo));
+            parametros.Add(new SqlParameter("@Repro", Repro));
+            parametros.Add(new SqlParameter("@Url", Url));
+
+            BaseHelper.ejecutarSentencia("UPDATE Video SET IdVideo= @IdVideo, Titulo = @Titulo, Repro= @Repro, Url = @Url WHERE IdVideo = @IdVideo", CommandType.Text, parametros);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

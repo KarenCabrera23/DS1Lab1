@@ -8,14 +8,18 @@
 </head>
 <body>
     <div>
-      <h1>Bienvenidos</h1>
-    <hr />
-    <a href="http://localhost:4746/Video/DeleteVideo">Eliminar Video</a>
-    <h1></h1>
-    <a href="http://localhost:4746/Video/AddVideo">Agregar Video</a>
-    <h1></h1>
-    <a href="http://localhost:4746/Video/UpdateVideo">Actualizar Video</a>
-    <h1></h1>
-    <a href="http://localhost:4746/Video/DeleteReproduccionesVideo">Eliminar Video por reproducciones</a>
+     <h1>Bienvenido</h1>
+           <h1> </h1>
+        <label>Opciones</label>
+           <h1> </h1>
+        <a href="Video/VerVideo">Ver Video</a>
+              <h1> </h1>
+        <a href ="Video/AddVideo">Agregar Video</a>
+        <h1> </h1>
+        <a href="Video/DeleteVideo">Eliminar Video</a>
+           <h1> </h1>
+        <a href="Video/UpdateVideo">Actualizar Video</a>
+    </div>
 </body>
 </html>
+ 
